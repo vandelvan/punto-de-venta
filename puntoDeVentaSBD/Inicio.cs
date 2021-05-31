@@ -26,7 +26,7 @@ namespace puntoDeVentaSBD
 
         private void connect_Click(object sender, EventArgs e)
         {
-            var cs = "Host=localhost;Username=postgres;Password=pswrd;Database=zazabarrotes";
+            var cs = "Host=salt.db.elephantsql.com;Username=xriwbypk;Password=bvN_9RQKxiiIXpNJfmtjVhCYJJ43KLHp;Database=xriwbypk";
             try
             {
                 using var con = new NpgsqlConnection(cs);
