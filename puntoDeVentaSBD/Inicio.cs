@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.PropertyGridInternal;
 using Npgsql;
 
 namespace puntoDeVentaSBD
@@ -33,7 +25,7 @@ namespace puntoDeVentaSBD
                 con.Open();
                 using var cmd = new NpgsqlCommand();
                 cmd.Connection = con;
-               
+                con.Close();
                 this.Close();
                 th = new Thread(OpenSign);
                 th.SetApartmentState(ApartmentState.STA);
@@ -43,6 +35,7 @@ namespace puntoDeVentaSBD
             catch
             {
                 Error er = new Error();
+                er.info.Text = "¡No se pudo conectar!"+string.Format(Environment.NewLine)+"Verifique la base de datos y vuelva a intentarlo";
                 er.Show();
 
             }
