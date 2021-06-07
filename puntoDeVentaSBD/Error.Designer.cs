@@ -49,10 +49,10 @@ namespace puntoDeVentaSBD
             // btn_connect
             // 
             this.btn_connect.AutoSize = true;
-            this.btn_connect.BackColor = System.Drawing.Color.White;
+            this.btn_connect.BackColor = System.Drawing.Color.Black;
             this.btn_connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_connect.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btn_connect.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
+            this.btn_connect.ForeColor = System.Drawing.Color.LightBlue;
             this.btn_connect.Location = new System.Drawing.Point(96, 100);
             this.btn_connect.Name = "btn_connect";
             this.btn_connect.Size = new System.Drawing.Size(118, 44);
@@ -65,7 +65,7 @@ namespace puntoDeVentaSBD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
             this.ClientSize = new System.Drawing.Size(301, 173);
             this.Controls.Add(this.btn_connect);
             this.Controls.Add(this.info);

@@ -8,6 +8,7 @@ namespace puntoDeVentaSBD
     {
         Thread th;
         private string user;
+        private string db;
         public SignIn()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace puntoDeVentaSBD
         }
         private void OpenMenu(object obj)
         {
-            Application.Run(new Menu(user));
+            Application.Run(new Menu(user,db));
         }
 
         private void btn_sign_Click(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace puntoDeVentaSBD
                 return;
             }
             var cs = "Host=salt.db.elephantsql.com;Username=xriwbypk;Password=bvN_9RQKxiiIXpNJfmtjVhCYJJ43KLHp;Database=xriwbypk";
+            db = cs;
             try
             {
                 using var con = new NpgsqlConnection(cs);

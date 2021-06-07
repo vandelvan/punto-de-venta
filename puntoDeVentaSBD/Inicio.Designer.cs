@@ -39,10 +39,10 @@ namespace puntoDeVentaSBD
             // connect
             // 
             this.connect.AutoSize = true;
-            this.connect.BackColor = System.Drawing.Color.White;
+            this.connect.BackColor = System.Drawing.Color.Black;
             this.connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connect.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.connect.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
+            this.connect.ForeColor = System.Drawing.Color.LightBlue;
             this.connect.Location = new System.Drawing.Point(172, 249);
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(179, 58);
@@ -56,7 +56,7 @@ namespace puntoDeVentaSBD
             this.logo.BackColor = System.Drawing.Color.Transparent;
             this.logo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logo.Font = new System.Drawing.Font("Unispace", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.logo.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
+            this.logo.ForeColor = System.Drawing.Color.LightBlue;
             this.logo.Location = new System.Drawing.Point(56, 46);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(394, 189);
@@ -68,7 +68,7 @@ namespace puntoDeVentaSBD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
             this.ClientSize = new System.Drawing.Size(495, 414);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.connect);

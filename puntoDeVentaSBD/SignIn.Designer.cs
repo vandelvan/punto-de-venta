@@ -46,7 +46,7 @@ namespace puntoDeVentaSBD
             this.bnv.BackColor = System.Drawing.Color.Transparent;
             this.bnv.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bnv.Font = new System.Drawing.Font("Unispace", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.bnv.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
+            this.bnv.ForeColor = System.Drawing.Color.LightBlue;
             this.bnv.Location = new System.Drawing.Point(32, 9);
             this.bnv.Name = "bnv";
             this.bnv.Size = new System.Drawing.Size(308, 118);
@@ -110,10 +110,10 @@ namespace puntoDeVentaSBD
             // btn_sign
             // 
             this.btn_sign.AutoSize = true;
-            this.btn_sign.BackColor = System.Drawing.Color.White;
+            this.btn_sign.BackColor = System.Drawing.Color.Black;
             this.btn_sign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sign.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btn_sign.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
+            this.btn_sign.ForeColor = System.Drawing.Color.LightBlue;
             this.btn_sign.Location = new System.Drawing.Point(118, 335);
             this.btn_sign.Name = "btn_sign";
             this.btn_sign.Size = new System.Drawing.Size(118, 44);
@@ -126,7 +126,7 @@ namespace puntoDeVentaSBD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
             this.ClientSize = new System.Drawing.Size(362, 450);
             this.Controls.Add(this.btn_sign);
             this.Controls.Add(this.text_contra);
