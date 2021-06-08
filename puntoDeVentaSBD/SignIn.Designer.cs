@@ -86,6 +86,7 @@ namespace puntoDeVentaSBD
             this.text_usuario.Name = "text_usuario";
             this.text_usuario.Size = new System.Drawing.Size(244, 20);
             this.text_usuario.TabIndex = 5;
+            this.text_usuario.Tag = "";
             // 
             // label_contra
             // 
