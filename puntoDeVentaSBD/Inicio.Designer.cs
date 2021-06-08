@@ -39,7 +39,7 @@ namespace puntoDeVentaSBD
             // connect
             // 
             this.connect.AutoSize = true;
-            this.connect.BackColor = System.Drawing.Color.Black;
+            this.connect.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
             this.connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.connect.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.connect.ForeColor = System.Drawing.Color.LightBlue;
@@ -47,7 +47,7 @@ namespace puntoDeVentaSBD
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(179, 58);
             this.connect.TabIndex = 0;
-            this.connect.Text = "CONECTAR";
+            this.connect.Text = "INGRESAR";
             this.connect.UseVisualStyleBackColor = false;
             this.connect.Click += new System.EventHandler(this.connect_Click);
             // 

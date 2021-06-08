@@ -82,9 +82,10 @@ namespace puntoDeVentaSBD
             // 
             // text_usuario
             // 
+            this.text_usuario.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.text_usuario.Location = new System.Drawing.Point(59, 216);
             this.text_usuario.Name = "text_usuario";
-            this.text_usuario.Size = new System.Drawing.Size(244, 20);
+            this.text_usuario.Size = new System.Drawing.Size(244, 21);
             this.text_usuario.TabIndex = 5;
             this.text_usuario.Tag = "";
             // 
@@ -103,15 +104,16 @@ namespace puntoDeVentaSBD
             // 
             // text_contra
             // 
+            this.text_contra.Font = new System.Drawing.Font("Unispace", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.text_contra.Location = new System.Drawing.Point(59, 288);
             this.text_contra.Name = "text_contra";
-            this.text_contra.Size = new System.Drawing.Size(244, 20);
+            this.text_contra.Size = new System.Drawing.Size(244, 21);
             this.text_contra.TabIndex = 7;
             // 
             // btn_sign
             // 
             this.btn_sign.AutoSize = true;
-            this.btn_sign.BackColor = System.Drawing.Color.Black;
+            this.btn_sign.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
             this.btn_sign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sign.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_sign.ForeColor = System.Drawing.Color.LightBlue;

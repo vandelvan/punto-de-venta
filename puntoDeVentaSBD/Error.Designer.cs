@@ -49,7 +49,7 @@ namespace puntoDeVentaSBD
             // btn_connect
             // 
             this.btn_connect.AutoSize = true;
-            this.btn_connect.BackColor = System.Drawing.Color.Black;
+            this.btn_connect.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
             this.btn_connect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_connect.Font = new System.Drawing.Font("Unispace", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_connect.ForeColor = System.Drawing.Color.LightBlue;

@@ -2,46 +2,64 @@
 using Npgsql;
 using System;
 using System.Data;
+using System.Threading;
 
 namespace puntoDeVentaSBD
 {
     public partial class Menu : Form
     {
+        Thread th;
         private string user;
         private string cs;
-        private bool menu_admin = false;
-        private bool venta_perm = false;
+        
         public Menu(string u,string db)
         {
             InitializeComponent();
+            Pestañas.Hide();
+            btn_admin.Hide();
+            btn_inv.Hide();
+            bool venta_perm = false;
             user = u;
             label_usuario.Text += user +"!";
             cs = db;
             string sql = "SELECT username_usuario,id_permiso,active FROM"+" administracion.lista_permisos"+
-                         " WHERE username_usuario ='"+user+"' AND id_permiso =1 AND active=true;";
+                         " WHERE username_usuario ='"+user+"' AND active=true;";
             DataTable perms = consulta(sql);
             if (perms != null)
             {
                 foreach(DataRow row in perms.Rows)
                 {
-                    venta_perm = true;
-                    break;
+                    string auxp = row["id_permiso"].ToString();
+                    if(auxp == "1")
+                        venta_perm = true;
+                    else if(auxp == "2")
+                        btn_inv.Show();
+                    else if(auxp == "3")
+                        btn_admin.Show();
+
+
                 }
             }
             
             if (venta_perm)
             {
+                Pestañas.Show();
                 actualizarPedidos();
                 actualizarTrans();
                 actualizarClientes();
                 actualizarMetodosPago();
+                actualizarCortes();
             }
+
             
+
         }
 
         private void actualizarPedidos()
         {
-            string sql = "SELECT id,cuenta_cliente,fecha_hora_pedido FROM"+" punto_de_venta.pedido;";
+            string sql = "SELECT pe.id,pe.cuenta_cliente,pe.fecha_hora_pedido,cl.nombre AS cliente FROM"+
+                         " punto_de_venta.pedido AS pe INNER JOIN punto_de_venta.cliente AS cl " +
+                         "ON cl.cuenta=pe.cuenta_cliente WHERE pe.active=true";
             DataTable aux = consulta(sql);
             if(aux != null)
                 dgv_pedidos.DataSource = aux;
@@ -49,7 +67,7 @@ namespace puntoDeVentaSBD
         
         private void actualizarTrans()
         {
-            string sql = "SELECT id,id_pedido,id_pago,id_producto,cantidad_de_producto,total FROM"+" punto_de_venta.transaccion;";
+            string sql = "SELECT id,id_pedido,id_pago,id_producto,cantidad_de_producto,total FROM"+" punto_de_venta.transaccion WHERE active=true;";
             DataTable aux = consulta(sql);
             if(aux != null)
                 dgv_trans.DataSource = aux;
@@ -57,7 +75,7 @@ namespace puntoDeVentaSBD
         
         private void actualizarClientes()
         {
-            string sql = "SELECT cuenta,nombre,estado_de_cuenta,credito_limite FROM"+" punto_de_venta.cliente;";
+            string sql = "SELECT cuenta,nombre,estado_de_cuenta,credito_limite FROM"+" punto_de_venta.cliente WHERE active=true;";
             DataTable aux = consulta(sql);
             if(aux != null)
                 dgv_clientes.DataSource = aux;
@@ -65,10 +83,18 @@ namespace puntoDeVentaSBD
         
         private void actualizarMetodosPago()
         {
-            string sql = "SELECT id,nombre,descripcion FROM"+" punto_de_venta.metodo_pago;";
+            string sql = "SELECT id,nombre,descripcion FROM"+" punto_de_venta.metodo_pago WHERE active=true;";
             DataTable aux = consulta(sql);
             if(aux != null)
                 dgv_mpagos.DataSource = aux;
+        }
+        
+        private void actualizarCortes()
+        {
+            string sql = "SELECT id,fecha_inicio,fecha_fin,entrada_total,salida_total,balance FROM"+" punto_de_venta.corte WHERE active=true;";
+            DataTable aux = consulta(sql);
+            if(aux != null)
+                dgv_cortes.DataSource = aux;
         }
         
         
@@ -143,72 +169,54 @@ namespace puntoDeVentaSBD
 
         private void btn_rein_ped_Click(object sender, EventArgs e)
         {
-            if (venta_perm)
-            {
-                actualizarPedidos();
-            }
+            actualizarPedidos();
         }
 
         private void btn_busc_ped_Click(object sender, EventArgs e)
         {
-            if (venta_perm)
+            string id="", nom="",fech="";
+            if (text_id_ped.Text != "") 
             {
-                string id="", nom="",fech="";
-                int cont=0;
-                if (text_id_ped.Text != "")
-                {
-                    id = " WHERE id=" + text_id_ped.Text;
-                    cont++;
-                }
-                if (text_clt_ped.Text != "")
-                {
-                    if (cont == 0)
-                        nom = " WHERE cuenta_cliente=" + text_clt_ped.Text;
-                    else
-                        nom = " AND cuenta_cliente=" + text_clt_ped.Text;
-                    cont++;
-                }
-                if (text_fecha_ped.Text != "")
-                {
-                    if (cont == 0)
-                        fech = " WHERE fecha_hora_pedido::text like '%" + text_fecha_ped.Text+"%'";
-                    else
-                        fech = " AND fecha_hora_pedido::text like '%" + text_fecha_ped.Text+"%'";
-                }
-                
-               
-                
-                string sql = "SELECT id,cuenta_cliente,fecha_hora_pedido FROM"+" punto_de_venta.pedido"+id+nom+fech+";";
-                DataTable aux = consulta(sql);
-                if(aux != null)
-                    dgv_pedidos.DataSource = aux;
+                id = " AND id=" + text_id_ped.Text;
             }
+            if (text_clt_ped.Text != "")
+            {
+                nom = " AND cuenta_cliente=" + text_clt_ped.Text;
+            }
+            if (text_fecha_ped.Text != "")
+            {
+                fech = " AND fecha_hora_pedido::text like '%" + text_fecha_ped.Text+"%'";
+            }
+            
+            string sql = "SELECT pe.id,pe.cuenta_cliente,pe.fecha_hora_pedido,cl.nombre AS cliente FROM"+
+                         " punto_de_venta.pedido AS pe INNER JOIN punto_de_venta.cliente AS cl " +
+                         "ON cl.cuenta=pe.cuenta_cliente WHERE pe.active=true"+id+nom+fech+";";
+
+            DataTable aux = consulta(sql);
+            if(aux != null)
+                dgv_pedidos.DataSource = aux;
         }
 
         private void btn_ins_ped_Click(object sender, EventArgs e)
         {
-            if (venta_perm)
+            if (text_id_ped.Text != "")
             {
-                if (text_id_ped.Text != "")
-                {
-                    Error er = new Error();
-                    er.info.Text = "¡Los ID son automaticos, borrar el ID!";
-                    er.Show();
-                    return;
-                }
-
-                if (text_clt_ped.Text != "")
-                {
-                    string fec = "NOW()",cliente = text_clt_ped.Text;
-                    if (text_fecha_ped.Text != "")
-                        fec = text_fecha_ped.Text;
-                    
-                    string sql = "INSERT INTO" +
-                                 " punto_de_venta.pedido (cuenta_cliente,fecha_hora_pedido,created_by) " +
-                                 "VALUES ('"+cliente+"','"+fec+"','"+user+"');";
-                    comando(sql);
-                    actualizarPedidos();
-                }
+                Error er = new Error();
+                er.info.Text = "¡Los ID son automaticos, borrar el ID!";
+                er.Show();
+                return;
+            }
+            if (text_clt_ped.Text != "")
+            {
+                string fec = "NOW()",cliente = text_clt_ped.Text;
+                if (text_fecha_ped.Text != "")
+                    fec = text_fecha_ped.Text;
+                
+                string sql = "INSERT INTO" +
+                             " punto_de_venta.pedido (cuenta_cliente,fecha_hora_pedido,created_by) " +
+                             "VALUES ('"+cliente+"','"+fec+"','"+user+"');";
+                comando(sql);
+                actualizarPedidos();
             }
         }
 
@@ -230,9 +238,8 @@ namespace puntoDeVentaSBD
             string msg = "(ID: " + text_id_ped.Text + ")" + string.Format(Environment.NewLine);
             if (MessageBox.Show(msg+"¿Desea realizar la eliminacion?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                string sql = "DELETE FROM" +
-                             " punto_de_venta.pedido WHERE id=" +text_id_ped.Text+
-                             ";";
+                string sql = "UPDATE punto_de_venta.pedido " +
+                             "SET active=false,deleted_by='"+user+"' WHERE id="+text_id_ped.Text+";";
                 comando(sql);
                 actualizarPedidos();
 
@@ -254,11 +261,33 @@ namespace puntoDeVentaSBD
                 if (text_fecha_ped.Text != "")
                     fec = "'"+text_fecha_ped.Text+"'";
                 string sql = "UPDATE punto_de_venta.pedido " +
-                             "SET cuenta_cliente=" +text_clt_ped.Text+",fecha_hora_pedido="+fec+" WHERE id="+text_id_ped.Text+";";
+                             "SET cuenta_cliente=" +text_clt_ped.Text+",fecha_hora_pedido="+fec+",updated_by='"+user+"' WHERE id="+text_id_ped.Text+";";
                 comando(sql);
                 actualizarPedidos();
 
             }
+        }
+
+        private void btn_cerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                th = new Thread(OpenSign);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+            }
+            
+        }
+        
+        private void OpenSign(object obj)
+        {
+            Application.Run(new SignIn());
+        }
+
+        private void btn_inv_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
