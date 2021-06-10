@@ -11,6 +11,8 @@ namespace puntoDeVentaSBD
         Thread th;
         private string user;
         private string cs;
+        private bool inv = false;
+        private bool admin = false;
         
         public Menu(string u,string db)
         {
@@ -30,12 +32,21 @@ namespace puntoDeVentaSBD
                 foreach(DataRow row in perms.Rows)
                 {
                     string auxp = row["id_permiso"].ToString();
-                    if(auxp == "1")
+                    if (auxp == "1")
+                    {
                         venta_perm = true;
-                    else if(auxp == "2")
+                    }
+                    else if (auxp == "2")
+                    {
                         btn_inv.Show();
-                    else if(auxp == "3")
+                        inv = true;
+                    }
+                    else if (auxp == "3")
+                    {
                         btn_admin.Show();
+                        admin = true;
+                    }
+                        
 
 
                 }
@@ -68,14 +79,37 @@ namespace puntoDeVentaSBD
             
         }
         
+        private void OpenAdm(object obj)
+        {
+            Application.Run(new Administracion(user,cs,inv,admin));
+        }
+        
         private void OpenSign(object obj)
         {
             Application.Run(new SignIn());
         }
+        
+        private void OpenInv(object obj)
+        {
+            Application.Run(new Inventario(user,cs,inv,admin));
+        }
+
 
         private void btn_inv_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.Close();
+            th = new Thread(OpenInv);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+            
+        }
+        
+        private void btn_admin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(OpenAdm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
         
         private DataTable consulta(string sql)
@@ -583,6 +617,7 @@ namespace puntoDeVentaSBD
             if(aux != null)
                 dgv_trans.DataSource = aux;
         }
+
         
     }
 }

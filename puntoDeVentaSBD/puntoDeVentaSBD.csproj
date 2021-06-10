@@ -29,6 +29,12 @@
       <Compile Update="Menu.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Inventario.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Administracion.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <PropertyGroup>

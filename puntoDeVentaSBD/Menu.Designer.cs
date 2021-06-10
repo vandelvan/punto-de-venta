@@ -98,6 +98,16 @@ namespace puntoDeVentaSBD
             this.text_nombre_mpagos = new System.Windows.Forms.TextBox();
             this.lbl_nombre_mpagos = new System.Windows.Forms.Label();
             this.tab_cortes = new System.Windows.Forms.TabPage();
+            this.btn_rein_cortes = new System.Windows.Forms.Button();
+            this.btn_del_cortes = new System.Windows.Forms.Button();
+            this.text_id_cortes = new System.Windows.Forms.TextBox();
+            this.btn_ins_cortes = new System.Windows.Forms.Button();
+            this.lb_id_cortes = new System.Windows.Forms.Label();
+            this.text_fecfin_cortes = new System.Windows.Forms.TextBox();
+            this.btn_busc_cortes = new System.Windows.Forms.Button();
+            this.lbl_fecfin_cortes = new System.Windows.Forms.Label();
+            this.text_fecin_cortes = new System.Windows.Forms.TextBox();
+            this.lbl_fecin_cortes = new System.Windows.Forms.Label();
             this.dgv_cortes = new System.Windows.Forms.DataGridView();
             this.lbl_cortes = new System.Windows.Forms.Label();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
@@ -1004,6 +1014,16 @@ namespace puntoDeVentaSBD
             // tab_cortes
             // 
             this.tab_cortes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.tab_cortes.Controls.Add(this.btn_rein_cortes);
+            this.tab_cortes.Controls.Add(this.btn_del_cortes);
+            this.tab_cortes.Controls.Add(this.text_id_cortes);
+            this.tab_cortes.Controls.Add(this.btn_ins_cortes);
+            this.tab_cortes.Controls.Add(this.lb_id_cortes);
+            this.tab_cortes.Controls.Add(this.text_fecfin_cortes);
+            this.tab_cortes.Controls.Add(this.btn_busc_cortes);
+            this.tab_cortes.Controls.Add(this.lbl_fecfin_cortes);
+            this.tab_cortes.Controls.Add(this.text_fecin_cortes);
+            this.tab_cortes.Controls.Add(this.lbl_fecin_cortes);
             this.tab_cortes.Controls.Add(this.dgv_cortes);
             this.tab_cortes.Controls.Add(this.lbl_cortes);
             this.tab_cortes.Location = new System.Drawing.Point(4, 23);
@@ -1011,6 +1031,130 @@ namespace puntoDeVentaSBD
             this.tab_cortes.Size = new System.Drawing.Size(734, 406);
             this.tab_cortes.TabIndex = 4;
             this.tab_cortes.Text = "Cortes";
+            // 
+            // btn_rein_cortes
+            // 
+            this.btn_rein_cortes.AutoSize = true;
+            this.btn_rein_cortes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_rein_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rein_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_rein_cortes.ForeColor = System.Drawing.Color.LightBlue;
+            this.btn_rein_cortes.Location = new System.Drawing.Point(626, 15);
+            this.btn_rein_cortes.Name = "btn_rein_cortes";
+            this.btn_rein_cortes.Size = new System.Drawing.Size(99, 35);
+            this.btn_rein_cortes.TabIndex = 39;
+            this.btn_rein_cortes.Text = "Restaurar";
+            this.btn_rein_cortes.UseVisualStyleBackColor = false;
+            // 
+            // btn_del_cortes
+            // 
+            this.btn_del_cortes.AutoSize = true;
+            this.btn_del_cortes.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_del_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_del_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_del_cortes.ForeColor = System.Drawing.Color.White;
+            this.btn_del_cortes.Location = new System.Drawing.Point(214, 352);
+            this.btn_del_cortes.Name = "btn_del_cortes";
+            this.btn_del_cortes.Size = new System.Drawing.Size(99, 27);
+            this.btn_del_cortes.TabIndex = 33;
+            this.btn_del_cortes.Text = "Eliminar";
+            this.btn_del_cortes.UseVisualStyleBackColor = false;
+            // 
+            // text_id_cortes
+            // 
+            this.text_id_cortes.Location = new System.Drawing.Point(14, 235);
+            this.text_id_cortes.Name = "text_id_cortes";
+            this.text_id_cortes.Size = new System.Drawing.Size(166, 21);
+            this.text_id_cortes.TabIndex = 25;
+            this.text_id_cortes.Tag = "";
+            this.text_id_cortes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_ins_cortes
+            // 
+            this.btn_ins_cortes.AutoSize = true;
+            this.btn_ins_cortes.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_ins_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ins_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_ins_cortes.ForeColor = System.Drawing.Color.White;
+            this.btn_ins_cortes.Location = new System.Drawing.Point(214, 286);
+            this.btn_ins_cortes.Name = "btn_ins_cortes";
+            this.btn_ins_cortes.Size = new System.Drawing.Size(99, 27);
+            this.btn_ins_cortes.TabIndex = 32;
+            this.btn_ins_cortes.Text = "Crear";
+            this.btn_ins_cortes.UseVisualStyleBackColor = false;
+            // 
+            // lb_id_cortes
+            // 
+            this.lb_id_cortes.BackColor = System.Drawing.Color.Transparent;
+            this.lb_id_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lb_id_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lb_id_cortes.ForeColor = System.Drawing.Color.White;
+            this.lb_id_cortes.Location = new System.Drawing.Point(73, 214);
+            this.lb_id_cortes.Name = "lb_id_cortes";
+            this.lb_id_cortes.Size = new System.Drawing.Size(43, 18);
+            this.lb_id_cortes.TabIndex = 26;
+            this.lb_id_cortes.Text = "ID";
+            this.lb_id_cortes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_fecfin_cortes
+            // 
+            this.text_fecfin_cortes.BackColor = System.Drawing.SystemColors.Window;
+            this.text_fecfin_cortes.Location = new System.Drawing.Point(14, 358);
+            this.text_fecfin_cortes.Name = "text_fecfin_cortes";
+            this.text_fecfin_cortes.Size = new System.Drawing.Size(166, 21);
+            this.text_fecfin_cortes.TabIndex = 31;
+            this.text_fecfin_cortes.Tag = "";
+            this.text_fecfin_cortes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_busc_cortes
+            // 
+            this.btn_busc_cortes.AutoSize = true;
+            this.btn_busc_cortes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_busc_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_busc_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_busc_cortes.ForeColor = System.Drawing.Color.White;
+            this.btn_busc_cortes.Location = new System.Drawing.Point(214, 229);
+            this.btn_busc_cortes.Name = "btn_busc_cortes";
+            this.btn_busc_cortes.Size = new System.Drawing.Size(99, 27);
+            this.btn_busc_cortes.TabIndex = 27;
+            this.btn_busc_cortes.Text = "Buscar";
+            this.btn_busc_cortes.UseVisualStyleBackColor = false;
+            // 
+            // lbl_fecfin_cortes
+            // 
+            this.lbl_fecfin_cortes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_fecfin_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_fecfin_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_fecfin_cortes.ForeColor = System.Drawing.Color.White;
+            this.lbl_fecfin_cortes.Location = new System.Drawing.Point(14, 337);
+            this.lbl_fecfin_cortes.Name = "lbl_fecfin_cortes";
+            this.lbl_fecfin_cortes.Size = new System.Drawing.Size(166, 18);
+            this.lbl_fecfin_cortes.TabIndex = 30;
+            this.lbl_fecfin_cortes.Text = "Fecha Fin";
+            this.lbl_fecfin_cortes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_fecin_cortes
+            // 
+            this.text_fecin_cortes.BackColor = System.Drawing.SystemColors.Window;
+            this.text_fecin_cortes.Location = new System.Drawing.Point(14, 295);
+            this.text_fecin_cortes.Name = "text_fecin_cortes";
+            this.text_fecin_cortes.Size = new System.Drawing.Size(166, 21);
+            this.text_fecin_cortes.TabIndex = 29;
+            this.text_fecin_cortes.Tag = "";
+            this.text_fecin_cortes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_fecin_cortes
+            // 
+            this.lbl_fecin_cortes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_fecin_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_fecin_cortes.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_fecin_cortes.ForeColor = System.Drawing.Color.White;
+            this.lbl_fecin_cortes.Location = new System.Drawing.Point(14, 274);
+            this.lbl_fecin_cortes.Name = "lbl_fecin_cortes";
+            this.lbl_fecin_cortes.Size = new System.Drawing.Size(166, 18);
+            this.lbl_fecin_cortes.TabIndex = 28;
+            this.lbl_fecin_cortes.Text = "Fecha Inicio";
+            this.lbl_fecin_cortes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgv_cortes
             // 
@@ -1066,6 +1210,7 @@ namespace puntoDeVentaSBD
             this.btn_admin.TabIndex = 25;
             this.btn_admin.Text = "ADMINISTRACION";
             this.btn_admin.UseVisualStyleBackColor = false;
+            this.btn_admin.Click += new System.EventHandler(this.btn_admin_Click);
             // 
             // btn_inv
             // 
@@ -1110,10 +1255,25 @@ namespace puntoDeVentaSBD
             this.tab_mpagos.ResumeLayout(false);
             this.tab_mpagos.PerformLayout();
             this.tab_cortes.ResumeLayout(false);
+            this.tab_cortes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_cortes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btn_del_cortes;
+        private System.Windows.Forms.Button btn_ins_cortes;
+        private System.Windows.Forms.Button btn_busc_cortes;
+        private System.Windows.Forms.Button btn_rein_cortes;
+        private System.Windows.Forms.Label lb_id_cortes;
+        private System.Windows.Forms.Label lbl_fecin_cortes;
+        private System.Windows.Forms.Label lbl_fecfin_cortes;
+        private System.Windows.Forms.TextBox text_id_cortes;
+        private System.Windows.Forms.TextBox text_fecin_cortes;
+        private System.Windows.Forms.TextBox text_fecfin_cortes;
+        
+
+        
 
         private System.Windows.Forms.TextBox text_cant_trans;
         private System.Windows.Forms.TextBox text_total_trans; 
