@@ -25,6 +25,12 @@ namespace puntoDeVentaSBD
 
         private void btn_sign_Click(object sender, EventArgs e)
         {
+            iniciar();
+        }
+        
+
+        private void iniciar()
+        {
             if (text_usuario.Text == "" || text_contra.Text == "")
             {
                 Error er = new Error();
@@ -73,6 +79,22 @@ namespace puntoDeVentaSBD
                 er.info.Text = "¡No se pudo conectar!"+string.Format(Environment.NewLine)+"Verifique la base de datos y vuelva a intentarlo";
                 er.Show();
 
+            }
+        }
+
+        private void text_contra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                iniciar();
+            }
+        }
+
+        private void text_usuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                iniciar();
             }
         }
     }

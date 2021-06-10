@@ -88,6 +88,7 @@ namespace puntoDeVentaSBD
             this.text_usuario.Size = new System.Drawing.Size(244, 21);
             this.text_usuario.TabIndex = 5;
             this.text_usuario.Tag = "";
+            this.text_usuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_usuario_KeyDown);
             // 
             // label_contra
             // 
@@ -109,6 +110,7 @@ namespace puntoDeVentaSBD
             this.text_contra.Name = "text_contra";
             this.text_contra.Size = new System.Drawing.Size(244, 21);
             this.text_contra.TabIndex = 7;
+            this.text_contra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_contra_KeyDown);
             // 
             // btn_sign
             // 

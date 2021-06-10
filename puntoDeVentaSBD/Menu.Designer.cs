@@ -53,23 +53,63 @@ namespace puntoDeVentaSBD
             this.btn_del_ped = new System.Windows.Forms.Button();
             this.btn_act_ped = new System.Windows.Forms.Button();
             this.Pestañas = new System.Windows.Forms.TabControl();
-            this.tab_pedidos = new System.Windows.Forms.TabPage();
             this.tab_trans = new System.Windows.Forms.TabPage();
+            this.btn_rein_trans = new System.Windows.Forms.Button();
+            this.text_idpago_trans = new System.Windows.Forms.TextBox();
+            this.lbl_idpago_trans = new System.Windows.Forms.Label();
+            this.text_cant_trans = new System.Windows.Forms.TextBox();
+            this.lbl_cant_trans = new System.Windows.Forms.Label();
+            this.text_idprod_trans = new System.Windows.Forms.TextBox();
+            this.lbl_idprod_trans = new System.Windows.Forms.Label();
+            this.btn_del_trans = new System.Windows.Forms.Button();
+            this.text_id_trans = new System.Windows.Forms.TextBox();
+            this.btn_ins_trans = new System.Windows.Forms.Button();
+            this.lbl_id_trans = new System.Windows.Forms.Label();
+            this.text_total_trans = new System.Windows.Forms.TextBox();
+            this.btn_busc_trans = new System.Windows.Forms.Button();
+            this.lbl_total_trans = new System.Windows.Forms.Label();
+            this.text_idped_trans = new System.Windows.Forms.TextBox();
+            this.lbl_idped_trans = new System.Windows.Forms.Label();
+            this.tab_pedidos = new System.Windows.Forms.TabPage();
             this.tab_clt = new System.Windows.Forms.TabPage();
+            this.btn_rein_cl = new System.Windows.Forms.Button();
+            this.text_credito_cl = new System.Windows.Forms.TextBox();
+            this.lbl_credito_cl = new System.Windows.Forms.Label();
+            this.btn_act_cl = new System.Windows.Forms.Button();
+            this.btn_del_cl = new System.Windows.Forms.Button();
+            this.text_cuenta_cl = new System.Windows.Forms.TextBox();
+            this.btn_ins_cl = new System.Windows.Forms.Button();
+            this.lbl_cuenta_cl = new System.Windows.Forms.Label();
+            this.text_estcunt_cl = new System.Windows.Forms.TextBox();
+            this.btn_busc_cl = new System.Windows.Forms.Button();
+            this.lbl_estcunt_cl = new System.Windows.Forms.Label();
+            this.text_nom_cl = new System.Windows.Forms.TextBox();
+            this.lbl_nom_cl = new System.Windows.Forms.Label();
             this.tab_mpagos = new System.Windows.Forms.TabPage();
-            this.btn_cerrarSesion = new System.Windows.Forms.Button();
-            this.btn_admin = new System.Windows.Forms.Button();
-            this.btn_inv = new System.Windows.Forms.Button();
+            this.btn_rein_mpagos = new System.Windows.Forms.Button();
+            this.btn_act_mpagos = new System.Windows.Forms.Button();
+            this.btn_del_mpagos = new System.Windows.Forms.Button();
+            this.text_id_mpagos = new System.Windows.Forms.TextBox();
+            this.btn_ins_mpagos = new System.Windows.Forms.Button();
+            this.lbl_id_mpagos = new System.Windows.Forms.Label();
+            this.text_desc_mpagos = new System.Windows.Forms.TextBox();
+            this.btn_busc_mpagos = new System.Windows.Forms.Button();
+            this.lbl_desc_mpagos = new System.Windows.Forms.Label();
+            this.text_nombre_mpagos = new System.Windows.Forms.TextBox();
+            this.lbl_nombre_mpagos = new System.Windows.Forms.Label();
             this.tab_cortes = new System.Windows.Forms.TabPage();
             this.dgv_cortes = new System.Windows.Forms.DataGridView();
             this.lbl_cortes = new System.Windows.Forms.Label();
+            this.btn_cerrarSesion = new System.Windows.Forms.Button();
+            this.btn_admin = new System.Windows.Forms.Button();
+            this.btn_inv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_pedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_trans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_mpagos)).BeginInit();
             this.Pestañas.SuspendLayout();
-            this.tab_pedidos.SuspendLayout();
             this.tab_trans.SuspendLayout();
+            this.tab_pedidos.SuspendLayout();
             this.tab_clt.SuspendLayout();
             this.tab_mpagos.SuspendLayout();
             this.tab_cortes.SuspendLayout();
@@ -142,6 +182,7 @@ namespace puntoDeVentaSBD
             this.dgv_trans.ReadOnly = true;
             this.dgv_trans.Size = new System.Drawing.Size(717, 155);
             this.dgv_trans.TabIndex = 9;
+            this.dgv_trans.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_trans_CellClick);
             // 
             // dgv_clientes
             // 
@@ -155,6 +196,7 @@ namespace puntoDeVentaSBD
             this.dgv_clientes.ReadOnly = true;
             this.dgv_clientes.Size = new System.Drawing.Size(715, 155);
             this.dgv_clientes.TabIndex = 10;
+            this.dgv_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellClick);
             // 
             // lbl_clientes
             // 
@@ -194,6 +236,7 @@ namespace puntoDeVentaSBD
             this.dgv_mpagos.ReadOnly = true;
             this.dgv_mpagos.Size = new System.Drawing.Size(717, 155);
             this.dgv_mpagos.TabIndex = 13;
+            this.dgv_mpagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_mpagos_CellClick);
             // 
             // text_id_ped
             // 
@@ -354,6 +397,230 @@ namespace puntoDeVentaSBD
             this.Pestañas.Size = new System.Drawing.Size(742, 433);
             this.Pestañas.TabIndex = 25;
             // 
+            // tab_trans
+            // 
+            this.tab_trans.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.tab_trans.Controls.Add(this.btn_rein_trans);
+            this.tab_trans.Controls.Add(this.text_idpago_trans);
+            this.tab_trans.Controls.Add(this.lbl_idpago_trans);
+            this.tab_trans.Controls.Add(this.text_cant_trans);
+            this.tab_trans.Controls.Add(this.lbl_cant_trans);
+            this.tab_trans.Controls.Add(this.text_idprod_trans);
+            this.tab_trans.Controls.Add(this.lbl_idprod_trans);
+            this.tab_trans.Controls.Add(this.btn_del_trans);
+            this.tab_trans.Controls.Add(this.text_id_trans);
+            this.tab_trans.Controls.Add(this.btn_ins_trans);
+            this.tab_trans.Controls.Add(this.lbl_id_trans);
+            this.tab_trans.Controls.Add(this.text_total_trans);
+            this.tab_trans.Controls.Add(this.btn_busc_trans);
+            this.tab_trans.Controls.Add(this.lbl_total_trans);
+            this.tab_trans.Controls.Add(this.text_idped_trans);
+            this.tab_trans.Controls.Add(this.lbl_idped_trans);
+            this.tab_trans.Controls.Add(this.lbl_trans);
+            this.tab_trans.Controls.Add(this.dgv_trans);
+            this.tab_trans.Location = new System.Drawing.Point(4, 23);
+            this.tab_trans.Name = "tab_trans";
+            this.tab_trans.Size = new System.Drawing.Size(734, 406);
+            this.tab_trans.TabIndex = 1;
+            this.tab_trans.Text = "Transacciones";
+            // 
+            // btn_rein_trans
+            // 
+            this.btn_rein_trans.AutoSize = true;
+            this.btn_rein_trans.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_rein_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rein_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_rein_trans.ForeColor = System.Drawing.Color.LightBlue;
+            this.btn_rein_trans.Location = new System.Drawing.Point(626, 18);
+            this.btn_rein_trans.Name = "btn_rein_trans";
+            this.btn_rein_trans.Size = new System.Drawing.Size(99, 35);
+            this.btn_rein_trans.TabIndex = 41;
+            this.btn_rein_trans.Text = "Restaurar";
+            this.btn_rein_trans.UseVisualStyleBackColor = false;
+            this.btn_rein_trans.Click += new System.EventHandler(this.btn_rein_trans_Click);
+            // 
+            // text_idpago_trans
+            // 
+            this.text_idpago_trans.Location = new System.Drawing.Point(200, 240);
+            this.text_idpago_trans.Name = "text_idpago_trans";
+            this.text_idpago_trans.Size = new System.Drawing.Size(166, 21);
+            this.text_idpago_trans.TabIndex = 35;
+            this.text_idpago_trans.Tag = "";
+            this.text_idpago_trans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_idpago_trans
+            // 
+            this.lbl_idpago_trans.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_idpago_trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_idpago_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_idpago_trans.ForeColor = System.Drawing.Color.White;
+            this.lbl_idpago_trans.Location = new System.Drawing.Point(235, 219);
+            this.lbl_idpago_trans.Name = "lbl_idpago_trans";
+            this.lbl_idpago_trans.Size = new System.Drawing.Size(88, 18);
+            this.lbl_idpago_trans.TabIndex = 36;
+            this.lbl_idpago_trans.Text = "ID Pago";
+            this.lbl_idpago_trans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_cant_trans
+            // 
+            this.text_cant_trans.BackColor = System.Drawing.SystemColors.Window;
+            this.text_cant_trans.Location = new System.Drawing.Point(200, 363);
+            this.text_cant_trans.Name = "text_cant_trans";
+            this.text_cant_trans.Size = new System.Drawing.Size(166, 21);
+            this.text_cant_trans.TabIndex = 40;
+            this.text_cant_trans.Tag = "";
+            this.text_cant_trans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_cant_trans
+            // 
+            this.lbl_cant_trans.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_cant_trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_cant_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_cant_trans.ForeColor = System.Drawing.Color.White;
+            this.lbl_cant_trans.Location = new System.Drawing.Point(200, 344);
+            this.lbl_cant_trans.Name = "lbl_cant_trans";
+            this.lbl_cant_trans.Size = new System.Drawing.Size(168, 18);
+            this.lbl_cant_trans.TabIndex = 39;
+            this.lbl_cant_trans.Text = "Cantidad de producto";
+            this.lbl_cant_trans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_idprod_trans
+            // 
+            this.text_idprod_trans.BackColor = System.Drawing.SystemColors.Window;
+            this.text_idprod_trans.Location = new System.Drawing.Point(200, 300);
+            this.text_idprod_trans.Name = "text_idprod_trans";
+            this.text_idprod_trans.Size = new System.Drawing.Size(166, 21);
+            this.text_idprod_trans.TabIndex = 38;
+            this.text_idprod_trans.Tag = "";
+            this.text_idprod_trans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_idprod_trans
+            // 
+            this.lbl_idprod_trans.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_idprod_trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_idprod_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_idprod_trans.ForeColor = System.Drawing.Color.White;
+            this.lbl_idprod_trans.Location = new System.Drawing.Point(200, 283);
+            this.lbl_idprod_trans.Name = "lbl_idprod_trans";
+            this.lbl_idprod_trans.Size = new System.Drawing.Size(166, 18);
+            this.lbl_idprod_trans.TabIndex = 37;
+            this.lbl_idprod_trans.Text = "ID Producto";
+            this.lbl_idprod_trans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_del_trans
+            // 
+            this.btn_del_trans.AutoSize = true;
+            this.btn_del_trans.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_del_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_del_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_del_trans.ForeColor = System.Drawing.Color.White;
+            this.btn_del_trans.Location = new System.Drawing.Point(404, 344);
+            this.btn_del_trans.Name = "btn_del_trans";
+            this.btn_del_trans.Size = new System.Drawing.Size(99, 27);
+            this.btn_del_trans.TabIndex = 33;
+            this.btn_del_trans.Text = "Eliminar";
+            this.btn_del_trans.UseVisualStyleBackColor = false;
+            this.btn_del_trans.Click += new System.EventHandler(this.btn_del_trans_Click);
+            // 
+            // text_id_trans
+            // 
+            this.text_id_trans.Location = new System.Drawing.Point(8, 242);
+            this.text_id_trans.Name = "text_id_trans";
+            this.text_id_trans.Size = new System.Drawing.Size(166, 21);
+            this.text_id_trans.TabIndex = 25;
+            this.text_id_trans.Tag = "";
+            this.text_id_trans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_ins_trans
+            // 
+            this.btn_ins_trans.AutoSize = true;
+            this.btn_ins_trans.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_ins_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ins_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_ins_trans.ForeColor = System.Drawing.Color.White;
+            this.btn_ins_trans.Location = new System.Drawing.Point(404, 291);
+            this.btn_ins_trans.Name = "btn_ins_trans";
+            this.btn_ins_trans.Size = new System.Drawing.Size(99, 27);
+            this.btn_ins_trans.TabIndex = 32;
+            this.btn_ins_trans.Text = "Insertar";
+            this.btn_ins_trans.UseVisualStyleBackColor = false;
+            this.btn_ins_trans.Click += new System.EventHandler(this.btn_ins_trans_Click);
+            // 
+            // lbl_id_trans
+            // 
+            this.lbl_id_trans.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_id_trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_id_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_id_trans.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_trans.Location = new System.Drawing.Point(67, 221);
+            this.lbl_id_trans.Name = "lbl_id_trans";
+            this.lbl_id_trans.Size = new System.Drawing.Size(43, 18);
+            this.lbl_id_trans.TabIndex = 26;
+            this.lbl_id_trans.Text = "ID";
+            this.lbl_id_trans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_total_trans
+            // 
+            this.text_total_trans.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.text_total_trans.Location = new System.Drawing.Point(8, 365);
+            this.text_total_trans.Name = "text_total_trans";
+            this.text_total_trans.ReadOnly = true;
+            this.text_total_trans.Size = new System.Drawing.Size(166, 21);
+            this.text_total_trans.TabIndex = 31;
+            this.text_total_trans.Tag = "";
+            this.text_total_trans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_busc_trans
+            // 
+            this.btn_busc_trans.AutoSize = true;
+            this.btn_busc_trans.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_busc_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_busc_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_busc_trans.ForeColor = System.Drawing.Color.White;
+            this.btn_busc_trans.Location = new System.Drawing.Point(404, 234);
+            this.btn_busc_trans.Name = "btn_busc_trans";
+            this.btn_busc_trans.Size = new System.Drawing.Size(99, 27);
+            this.btn_busc_trans.TabIndex = 27;
+            this.btn_busc_trans.Text = "Buscar";
+            this.btn_busc_trans.UseVisualStyleBackColor = false;
+            this.btn_busc_trans.Click += new System.EventHandler(this.btn_busc_trans_Click_1);
+            // 
+            // lbl_total_trans
+            // 
+            this.lbl_total_trans.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_total_trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_total_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_total_trans.ForeColor = System.Drawing.Color.White;
+            this.lbl_total_trans.Location = new System.Drawing.Point(55, 344);
+            this.lbl_total_trans.Name = "lbl_total_trans";
+            this.lbl_total_trans.Size = new System.Drawing.Size(76, 18);
+            this.lbl_total_trans.TabIndex = 30;
+            this.lbl_total_trans.Text = "Total";
+            this.lbl_total_trans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_idped_trans
+            // 
+            this.text_idped_trans.BackColor = System.Drawing.SystemColors.Window;
+            this.text_idped_trans.Location = new System.Drawing.Point(8, 302);
+            this.text_idped_trans.Name = "text_idped_trans";
+            this.text_idped_trans.Size = new System.Drawing.Size(166, 21);
+            this.text_idped_trans.TabIndex = 29;
+            this.text_idped_trans.Tag = "";
+            this.text_idped_trans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_idped_trans
+            // 
+            this.lbl_idped_trans.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_idped_trans.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_idped_trans.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_idped_trans.ForeColor = System.Drawing.Color.White;
+            this.lbl_idped_trans.Location = new System.Drawing.Point(8, 285);
+            this.lbl_idped_trans.Name = "lbl_idped_trans";
+            this.lbl_idped_trans.Size = new System.Drawing.Size(166, 18);
+            this.lbl_idped_trans.TabIndex = 28;
+            this.lbl_idped_trans.Text = "ID Pedido";
+            this.lbl_idped_trans.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tab_pedidos
             // 
             this.tab_pedidos.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
@@ -378,20 +645,22 @@ namespace puntoDeVentaSBD
             this.tab_pedidos.TabIndex = 0;
             this.tab_pedidos.Text = "Pedidos";
             // 
-            // tab_trans
-            // 
-            this.tab_trans.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
-            this.tab_trans.Controls.Add(this.lbl_trans);
-            this.tab_trans.Controls.Add(this.dgv_trans);
-            this.tab_trans.Location = new System.Drawing.Point(4, 23);
-            this.tab_trans.Name = "tab_trans";
-            this.tab_trans.Size = new System.Drawing.Size(734, 406);
-            this.tab_trans.TabIndex = 1;
-            this.tab_trans.Text = "Transacciones";
-            // 
             // tab_clt
             // 
             this.tab_clt.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.tab_clt.Controls.Add(this.btn_rein_cl);
+            this.tab_clt.Controls.Add(this.text_credito_cl);
+            this.tab_clt.Controls.Add(this.lbl_credito_cl);
+            this.tab_clt.Controls.Add(this.btn_act_cl);
+            this.tab_clt.Controls.Add(this.btn_del_cl);
+            this.tab_clt.Controls.Add(this.text_cuenta_cl);
+            this.tab_clt.Controls.Add(this.btn_ins_cl);
+            this.tab_clt.Controls.Add(this.lbl_cuenta_cl);
+            this.tab_clt.Controls.Add(this.text_estcunt_cl);
+            this.tab_clt.Controls.Add(this.btn_busc_cl);
+            this.tab_clt.Controls.Add(this.lbl_estcunt_cl);
+            this.tab_clt.Controls.Add(this.text_nom_cl);
+            this.tab_clt.Controls.Add(this.lbl_nom_cl);
             this.tab_clt.Controls.Add(this.lbl_clientes);
             this.tab_clt.Controls.Add(this.dgv_clientes);
             this.tab_clt.Location = new System.Drawing.Point(4, 23);
@@ -400,9 +669,186 @@ namespace puntoDeVentaSBD
             this.tab_clt.TabIndex = 2;
             this.tab_clt.Text = "Clientes";
             // 
+            // btn_rein_cl
+            // 
+            this.btn_rein_cl.AutoSize = true;
+            this.btn_rein_cl.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_rein_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rein_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_rein_cl.ForeColor = System.Drawing.Color.LightBlue;
+            this.btn_rein_cl.Location = new System.Drawing.Point(626, 17);
+            this.btn_rein_cl.Name = "btn_rein_cl";
+            this.btn_rein_cl.Size = new System.Drawing.Size(99, 35);
+            this.btn_rein_cl.TabIndex = 37;
+            this.btn_rein_cl.Text = "Restaurar";
+            this.btn_rein_cl.UseVisualStyleBackColor = false;
+            this.btn_rein_cl.Click += new System.EventHandler(this.btn_rein_cl_Click);
+            // 
+            // text_credito_cl
+            // 
+            this.text_credito_cl.BackColor = System.Drawing.SystemColors.Window;
+            this.text_credito_cl.Location = new System.Drawing.Point(198, 298);
+            this.text_credito_cl.Name = "text_credito_cl";
+            this.text_credito_cl.Size = new System.Drawing.Size(166, 21);
+            this.text_credito_cl.TabIndex = 36;
+            this.text_credito_cl.Tag = "";
+            this.text_credito_cl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_credito_cl
+            // 
+            this.lbl_credito_cl.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_credito_cl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_credito_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_credito_cl.ForeColor = System.Drawing.Color.White;
+            this.lbl_credito_cl.Location = new System.Drawing.Point(198, 281);
+            this.lbl_credito_cl.Name = "lbl_credito_cl";
+            this.lbl_credito_cl.Size = new System.Drawing.Size(166, 18);
+            this.lbl_credito_cl.TabIndex = 35;
+            this.lbl_credito_cl.Text = "Credito Limite";
+            this.lbl_credito_cl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_act_cl
+            // 
+            this.btn_act_cl.AutoSize = true;
+            this.btn_act_cl.BackColor = System.Drawing.Color.Teal;
+            this.btn_act_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_act_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_act_cl.ForeColor = System.Drawing.Color.White;
+            this.btn_act_cl.Location = new System.Drawing.Point(535, 235);
+            this.btn_act_cl.Name = "btn_act_cl";
+            this.btn_act_cl.Size = new System.Drawing.Size(99, 27);
+            this.btn_act_cl.TabIndex = 34;
+            this.btn_act_cl.Text = "Actualizar";
+            this.btn_act_cl.UseVisualStyleBackColor = false;
+            this.btn_act_cl.Click += new System.EventHandler(this.btn_act_cl_Click);
+            // 
+            // btn_del_cl
+            // 
+            this.btn_del_cl.AutoSize = true;
+            this.btn_del_cl.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_del_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_del_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_del_cl.ForeColor = System.Drawing.Color.White;
+            this.btn_del_cl.Location = new System.Drawing.Point(535, 292);
+            this.btn_del_cl.Name = "btn_del_cl";
+            this.btn_del_cl.Size = new System.Drawing.Size(99, 27);
+            this.btn_del_cl.TabIndex = 33;
+            this.btn_del_cl.Text = "Eliminar";
+            this.btn_del_cl.UseVisualStyleBackColor = false;
+            this.btn_del_cl.Click += new System.EventHandler(this.btn_del_cl_Click);
+            // 
+            // text_cuenta_cl
+            // 
+            this.text_cuenta_cl.Location = new System.Drawing.Point(10, 238);
+            this.text_cuenta_cl.Name = "text_cuenta_cl";
+            this.text_cuenta_cl.Size = new System.Drawing.Size(166, 21);
+            this.text_cuenta_cl.TabIndex = 25;
+            this.text_cuenta_cl.Tag = "";
+            this.text_cuenta_cl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_ins_cl
+            // 
+            this.btn_ins_cl.AutoSize = true;
+            this.btn_ins_cl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_ins_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ins_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_ins_cl.ForeColor = System.Drawing.Color.White;
+            this.btn_ins_cl.Location = new System.Drawing.Point(419, 292);
+            this.btn_ins_cl.Name = "btn_ins_cl";
+            this.btn_ins_cl.Size = new System.Drawing.Size(99, 27);
+            this.btn_ins_cl.TabIndex = 32;
+            this.btn_ins_cl.Text = "Insertar";
+            this.btn_ins_cl.UseVisualStyleBackColor = false;
+            this.btn_ins_cl.Click += new System.EventHandler(this.btn_ins_cl_Click);
+            // 
+            // lbl_cuenta_cl
+            // 
+            this.lbl_cuenta_cl.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_cuenta_cl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_cuenta_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_cuenta_cl.ForeColor = System.Drawing.Color.White;
+            this.lbl_cuenta_cl.Location = new System.Drawing.Point(57, 217);
+            this.lbl_cuenta_cl.Name = "lbl_cuenta_cl";
+            this.lbl_cuenta_cl.Size = new System.Drawing.Size(64, 18);
+            this.lbl_cuenta_cl.TabIndex = 26;
+            this.lbl_cuenta_cl.Text = "Cuenta";
+            this.lbl_cuenta_cl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_estcunt_cl
+            // 
+            this.text_estcunt_cl.BackColor = System.Drawing.SystemColors.Window;
+            this.text_estcunt_cl.Location = new System.Drawing.Point(198, 238);
+            this.text_estcunt_cl.Name = "text_estcunt_cl";
+            this.text_estcunt_cl.Size = new System.Drawing.Size(166, 21);
+            this.text_estcunt_cl.TabIndex = 31;
+            this.text_estcunt_cl.Tag = "";
+            this.text_estcunt_cl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_busc_cl
+            // 
+            this.btn_busc_cl.AutoSize = true;
+            this.btn_busc_cl.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_busc_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_busc_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_busc_cl.ForeColor = System.Drawing.Color.White;
+            this.btn_busc_cl.Location = new System.Drawing.Point(419, 235);
+            this.btn_busc_cl.Name = "btn_busc_cl";
+            this.btn_busc_cl.Size = new System.Drawing.Size(99, 27);
+            this.btn_busc_cl.TabIndex = 27;
+            this.btn_busc_cl.Text = "Buscar";
+            this.btn_busc_cl.UseVisualStyleBackColor = false;
+            this.btn_busc_cl.Click += new System.EventHandler(this.btn_busc_cl_Click);
+            // 
+            // lbl_estcunt_cl
+            // 
+            this.lbl_estcunt_cl.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_estcunt_cl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_estcunt_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_estcunt_cl.ForeColor = System.Drawing.Color.White;
+            this.lbl_estcunt_cl.Location = new System.Drawing.Point(205, 217);
+            this.lbl_estcunt_cl.Name = "lbl_estcunt_cl";
+            this.lbl_estcunt_cl.Size = new System.Drawing.Size(147, 18);
+            this.lbl_estcunt_cl.TabIndex = 30;
+            this.lbl_estcunt_cl.Text = "Estado de Cuenta";
+            this.lbl_estcunt_cl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_nom_cl
+            // 
+            this.text_nom_cl.BackColor = System.Drawing.SystemColors.Window;
+            this.text_nom_cl.Location = new System.Drawing.Point(10, 298);
+            this.text_nom_cl.Name = "text_nom_cl";
+            this.text_nom_cl.Size = new System.Drawing.Size(166, 21);
+            this.text_nom_cl.TabIndex = 29;
+            this.text_nom_cl.Tag = "";
+            this.text_nom_cl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_nom_cl
+            // 
+            this.lbl_nom_cl.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nom_cl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_nom_cl.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_nom_cl.ForeColor = System.Drawing.Color.White;
+            this.lbl_nom_cl.Location = new System.Drawing.Point(10, 281);
+            this.lbl_nom_cl.Name = "lbl_nom_cl";
+            this.lbl_nom_cl.Size = new System.Drawing.Size(166, 18);
+            this.lbl_nom_cl.TabIndex = 28;
+            this.lbl_nom_cl.Text = "Nombre";
+            this.lbl_nom_cl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tab_mpagos
             // 
             this.tab_mpagos.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.tab_mpagos.Controls.Add(this.btn_rein_mpagos);
+            this.tab_mpagos.Controls.Add(this.btn_act_mpagos);
+            this.tab_mpagos.Controls.Add(this.btn_del_mpagos);
+            this.tab_mpagos.Controls.Add(this.text_id_mpagos);
+            this.tab_mpagos.Controls.Add(this.btn_ins_mpagos);
+            this.tab_mpagos.Controls.Add(this.lbl_id_mpagos);
+            this.tab_mpagos.Controls.Add(this.text_desc_mpagos);
+            this.tab_mpagos.Controls.Add(this.btn_busc_mpagos);
+            this.tab_mpagos.Controls.Add(this.lbl_desc_mpagos);
+            this.tab_mpagos.Controls.Add(this.text_nombre_mpagos);
+            this.tab_mpagos.Controls.Add(this.lbl_nombre_mpagos);
             this.tab_mpagos.Controls.Add(this.dgv_mpagos);
             this.tab_mpagos.Controls.Add(this.lbl_mpagos);
             this.tab_mpagos.Location = new System.Drawing.Point(4, 23);
@@ -410,6 +856,187 @@ namespace puntoDeVentaSBD
             this.tab_mpagos.Size = new System.Drawing.Size(734, 406);
             this.tab_mpagos.TabIndex = 3;
             this.tab_mpagos.Text = "M. Pago";
+            // 
+            // btn_rein_mpagos
+            // 
+            this.btn_rein_mpagos.AutoSize = true;
+            this.btn_rein_mpagos.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_rein_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rein_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_rein_mpagos.ForeColor = System.Drawing.Color.LightBlue;
+            this.btn_rein_mpagos.Location = new System.Drawing.Point(626, 15);
+            this.btn_rein_mpagos.Name = "btn_rein_mpagos";
+            this.btn_rein_mpagos.Size = new System.Drawing.Size(99, 35);
+            this.btn_rein_mpagos.TabIndex = 38;
+            this.btn_rein_mpagos.Text = "Restaurar";
+            this.btn_rein_mpagos.UseVisualStyleBackColor = false;
+            this.btn_rein_mpagos.Click += new System.EventHandler(this.btn_rein_mpagos_Click);
+            // 
+            // btn_act_mpagos
+            // 
+            this.btn_act_mpagos.AutoSize = true;
+            this.btn_act_mpagos.BackColor = System.Drawing.Color.Teal;
+            this.btn_act_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_act_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_act_mpagos.ForeColor = System.Drawing.Color.White;
+            this.btn_act_mpagos.Location = new System.Drawing.Point(499, 231);
+            this.btn_act_mpagos.Name = "btn_act_mpagos";
+            this.btn_act_mpagos.Size = new System.Drawing.Size(99, 27);
+            this.btn_act_mpagos.TabIndex = 34;
+            this.btn_act_mpagos.Text = "Actualizar";
+            this.btn_act_mpagos.UseVisualStyleBackColor = false;
+            this.btn_act_mpagos.Click += new System.EventHandler(this.btn_act_mpagos_Click);
+            // 
+            // btn_del_mpagos
+            // 
+            this.btn_del_mpagos.AutoSize = true;
+            this.btn_del_mpagos.BackColor = System.Drawing.Color.DarkRed;
+            this.btn_del_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_del_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_del_mpagos.ForeColor = System.Drawing.Color.White;
+            this.btn_del_mpagos.Location = new System.Drawing.Point(499, 288);
+            this.btn_del_mpagos.Name = "btn_del_mpagos";
+            this.btn_del_mpagos.Size = new System.Drawing.Size(99, 27);
+            this.btn_del_mpagos.TabIndex = 33;
+            this.btn_del_mpagos.Text = "Eliminar";
+            this.btn_del_mpagos.UseVisualStyleBackColor = false;
+            this.btn_del_mpagos.Click += new System.EventHandler(this.btn_del_mpagos_Click);
+            // 
+            // text_id_mpagos
+            // 
+            this.text_id_mpagos.Location = new System.Drawing.Point(12, 235);
+            this.text_id_mpagos.Name = "text_id_mpagos";
+            this.text_id_mpagos.Size = new System.Drawing.Size(166, 21);
+            this.text_id_mpagos.TabIndex = 25;
+            this.text_id_mpagos.Tag = "";
+            this.text_id_mpagos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_ins_mpagos
+            // 
+            this.btn_ins_mpagos.AutoSize = true;
+            this.btn_ins_mpagos.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_ins_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ins_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_ins_mpagos.ForeColor = System.Drawing.Color.White;
+            this.btn_ins_mpagos.Location = new System.Drawing.Point(383, 288);
+            this.btn_ins_mpagos.Name = "btn_ins_mpagos";
+            this.btn_ins_mpagos.Size = new System.Drawing.Size(99, 27);
+            this.btn_ins_mpagos.TabIndex = 32;
+            this.btn_ins_mpagos.Text = "Insertar";
+            this.btn_ins_mpagos.UseVisualStyleBackColor = false;
+            this.btn_ins_mpagos.Click += new System.EventHandler(this.btn_ins_mpagos_Click);
+            // 
+            // lbl_id_mpagos
+            // 
+            this.lbl_id_mpagos.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_id_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_id_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_id_mpagos.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_mpagos.Location = new System.Drawing.Point(71, 214);
+            this.lbl_id_mpagos.Name = "lbl_id_mpagos";
+            this.lbl_id_mpagos.Size = new System.Drawing.Size(43, 18);
+            this.lbl_id_mpagos.TabIndex = 26;
+            this.lbl_id_mpagos.Text = "ID";
+            this.lbl_id_mpagos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_desc_mpagos
+            // 
+            this.text_desc_mpagos.BackColor = System.Drawing.SystemColors.Window;
+            this.text_desc_mpagos.Location = new System.Drawing.Point(193, 235);
+            this.text_desc_mpagos.Multiline = true;
+            this.text_desc_mpagos.Name = "text_desc_mpagos";
+            this.text_desc_mpagos.Size = new System.Drawing.Size(166, 81);
+            this.text_desc_mpagos.TabIndex = 31;
+            this.text_desc_mpagos.Tag = "";
+            this.text_desc_mpagos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_busc_mpagos
+            // 
+            this.btn_busc_mpagos.AutoSize = true;
+            this.btn_busc_mpagos.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            this.btn_busc_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_busc_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_busc_mpagos.ForeColor = System.Drawing.Color.White;
+            this.btn_busc_mpagos.Location = new System.Drawing.Point(383, 231);
+            this.btn_busc_mpagos.Name = "btn_busc_mpagos";
+            this.btn_busc_mpagos.Size = new System.Drawing.Size(99, 27);
+            this.btn_busc_mpagos.TabIndex = 27;
+            this.btn_busc_mpagos.Text = "Buscar";
+            this.btn_busc_mpagos.UseVisualStyleBackColor = false;
+            this.btn_busc_mpagos.Click += new System.EventHandler(this.btn_busc_mpagos_Click);
+            // 
+            // lbl_desc_mpagos
+            // 
+            this.lbl_desc_mpagos.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_desc_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_desc_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_desc_mpagos.ForeColor = System.Drawing.Color.White;
+            this.lbl_desc_mpagos.Location = new System.Drawing.Point(227, 214);
+            this.lbl_desc_mpagos.Name = "lbl_desc_mpagos";
+            this.lbl_desc_mpagos.Size = new System.Drawing.Size(96, 18);
+            this.lbl_desc_mpagos.TabIndex = 30;
+            this.lbl_desc_mpagos.Text = "Descripción";
+            this.lbl_desc_mpagos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // text_nombre_mpagos
+            // 
+            this.text_nombre_mpagos.BackColor = System.Drawing.SystemColors.Window;
+            this.text_nombre_mpagos.Location = new System.Drawing.Point(12, 295);
+            this.text_nombre_mpagos.Name = "text_nombre_mpagos";
+            this.text_nombre_mpagos.Size = new System.Drawing.Size(166, 21);
+            this.text_nombre_mpagos.TabIndex = 29;
+            this.text_nombre_mpagos.Tag = "";
+            this.text_nombre_mpagos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_nombre_mpagos
+            // 
+            this.lbl_nombre_mpagos.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nombre_mpagos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_nombre_mpagos.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_nombre_mpagos.ForeColor = System.Drawing.Color.White;
+            this.lbl_nombre_mpagos.Location = new System.Drawing.Point(12, 274);
+            this.lbl_nombre_mpagos.Name = "lbl_nombre_mpagos";
+            this.lbl_nombre_mpagos.Size = new System.Drawing.Size(166, 18);
+            this.lbl_nombre_mpagos.TabIndex = 28;
+            this.lbl_nombre_mpagos.Text = "Nombre";
+            this.lbl_nombre_mpagos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tab_cortes
+            // 
+            this.tab_cortes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
+            this.tab_cortes.Controls.Add(this.dgv_cortes);
+            this.tab_cortes.Controls.Add(this.lbl_cortes);
+            this.tab_cortes.Location = new System.Drawing.Point(4, 23);
+            this.tab_cortes.Name = "tab_cortes";
+            this.tab_cortes.Size = new System.Drawing.Size(734, 406);
+            this.tab_cortes.TabIndex = 4;
+            this.tab_cortes.Text = "Cortes";
+            // 
+            // dgv_cortes
+            // 
+            this.dgv_cortes.AllowUserToAddRows = false;
+            this.dgv_cortes.AllowUserToDeleteRows = false;
+            this.dgv_cortes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_cortes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_cortes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cortes.Location = new System.Drawing.Point(8, 56);
+            this.dgv_cortes.Name = "dgv_cortes";
+            this.dgv_cortes.ReadOnly = true;
+            this.dgv_cortes.Size = new System.Drawing.Size(717, 155);
+            this.dgv_cortes.TabIndex = 13;
+            // 
+            // lbl_cortes
+            // 
+            this.lbl_cortes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_cortes.Font = new System.Drawing.Font("Unispace", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_cortes.ForeColor = System.Drawing.Color.LightBlue;
+            this.lbl_cortes.Location = new System.Drawing.Point(8, 15);
+            this.lbl_cortes.Name = "lbl_cortes";
+            this.lbl_cortes.Size = new System.Drawing.Size(241, 38);
+            this.lbl_cortes.TabIndex = 12;
+            this.lbl_cortes.Text = "Cortes";
+            this.lbl_cortes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_cerrarSesion
             // 
@@ -455,43 +1082,6 @@ namespace puntoDeVentaSBD
             this.btn_inv.UseVisualStyleBackColor = false;
             this.btn_inv.Click += new System.EventHandler(this.btn_inv_Click);
             // 
-            // tab_cortes
-            // 
-            this.tab_cortes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
-            this.tab_cortes.Controls.Add(this.dgv_cortes);
-            this.tab_cortes.Controls.Add(this.lbl_cortes);
-            this.tab_cortes.Location = new System.Drawing.Point(4, 23);
-            this.tab_cortes.Name = "tab_cortes";
-            this.tab_cortes.Size = new System.Drawing.Size(734, 406);
-            this.tab_cortes.TabIndex = 4;
-            this.tab_cortes.Text = "Cortes";
-            // 
-            // dgv_cortes
-            // 
-            this.dgv_cortes.AllowUserToAddRows = false;
-            this.dgv_cortes.AllowUserToDeleteRows = false;
-            this.dgv_cortes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv_cortes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_cortes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cortes.Location = new System.Drawing.Point(8, 56);
-            this.dgv_cortes.Name = "dgv_cortes";
-            this.dgv_cortes.ReadOnly = true;
-            this.dgv_cortes.Size = new System.Drawing.Size(717, 155);
-            this.dgv_cortes.TabIndex = 13;
-            // 
-            // lbl_cortes
-            // 
-            this.lbl_cortes.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_cortes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_cortes.Font = new System.Drawing.Font("Unispace", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl_cortes.ForeColor = System.Drawing.Color.LightBlue;
-            this.lbl_cortes.Location = new System.Drawing.Point(8, 15);
-            this.lbl_cortes.Name = "lbl_cortes";
-            this.lbl_cortes.Size = new System.Drawing.Size(241, 38);
-            this.lbl_cortes.TabIndex = 12;
-            this.lbl_cortes.Text = "Cortes";
-            this.lbl_cortes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,16 +1101,65 @@ namespace puntoDeVentaSBD
             ((System.ComponentModel.ISupportInitialize) (this.dgv_clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.dgv_mpagos)).EndInit();
             this.Pestañas.ResumeLayout(false);
+            this.tab_trans.ResumeLayout(false);
+            this.tab_trans.PerformLayout();
             this.tab_pedidos.ResumeLayout(false);
             this.tab_pedidos.PerformLayout();
-            this.tab_trans.ResumeLayout(false);
             this.tab_clt.ResumeLayout(false);
+            this.tab_clt.PerformLayout();
             this.tab_mpagos.ResumeLayout(false);
+            this.tab_mpagos.PerformLayout();
             this.tab_cortes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.dgv_cortes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.TextBox text_cant_trans;
+        private System.Windows.Forms.TextBox text_total_trans; 
+        private System.Windows.Forms.TextBox text_idprod_trans;
+        private System.Windows.Forms.TextBox text_idpago_trans;
+        private System.Windows.Forms.TextBox text_idped_trans;
+        private System.Windows.Forms.TextBox text_id_trans;
+
+        private System.Windows.Forms.Button btn_rein_trans;
+        private System.Windows.Forms.Button btn_del_trans;
+        private System.Windows.Forms.Button btn_ins_trans;
+        private System.Windows.Forms.Button btn_busc_trans;
+
+        private System.Windows.Forms.Label lbl_total_trans;
+        private System.Windows.Forms.Label lbl_cant_trans;
+        private System.Windows.Forms.Label lbl_idprod_trans;
+        private System.Windows.Forms.Label lbl_id_trans;
+        private System.Windows.Forms.Label lbl_idpago_trans;
+        private System.Windows.Forms.Label lbl_idped_trans;
+
+
+        private System.Windows.Forms.Button btn_rein_mpagos;
+        private System.Windows.Forms.Button btn_act_mpagos;
+        private System.Windows.Forms.Button btn_busc_mpagos;
+        private System.Windows.Forms.TextBox text_id_mpagos;
+        private System.Windows.Forms.Button btn_ins_mpagos;
+        private System.Windows.Forms.Label lbl_id_mpagos;
+        private System.Windows.Forms.TextBox text_desc_mpagos;
+        private System.Windows.Forms.Button btn_del_mpagos;
+        private System.Windows.Forms.Label lbl_desc_mpagos;
+        private System.Windows.Forms.TextBox text_nombre_mpagos;
+        private System.Windows.Forms.Label lbl_nombre_mpagos;
+
+        private System.Windows.Forms.Button btn_rein_cl;
+        private System.Windows.Forms.Button btn_busc_cl;
+        private System.Windows.Forms.Button btn_ins_cl;
+        private System.Windows.Forms.TextBox text_cuenta_cl;
+        private System.Windows.Forms.TextBox text_estcunt_cl;
+        private System.Windows.Forms.Button btn_act_cl;
+        private System.Windows.Forms.Label lbl_cuenta_cl;
+        private System.Windows.Forms.TextBox text_credito_cl;
+        private System.Windows.Forms.Button btn_del_cl;
+        private System.Windows.Forms.Label lbl_estcunt_cl;
+        private System.Windows.Forms.TextBox text_nom_cl;
+        private System.Windows.Forms.Label lbl_nom_cl;
+        private System.Windows.Forms.Label lbl_credito_cl;
 
         private System.Windows.Forms.TabPage tab_cortes;
         private System.Windows.Forms.DataGridView dgv_cortes;
