@@ -1045,6 +1045,7 @@ namespace puntoDeVentaSBD
             this.btn_rein_cortes.TabIndex = 39;
             this.btn_rein_cortes.Text = "Restaurar";
             this.btn_rein_cortes.UseVisualStyleBackColor = false;
+            this.btn_rein_cortes.Click += new System.EventHandler(this.btn_rein_cortes_Click);
             // 
             // btn_del_cortes
             // 
@@ -1059,6 +1060,7 @@ namespace puntoDeVentaSBD
             this.btn_del_cortes.TabIndex = 33;
             this.btn_del_cortes.Text = "Eliminar";
             this.btn_del_cortes.UseVisualStyleBackColor = false;
+            this.btn_del_cortes.Click += new System.EventHandler(this.btn_del_cortes_Click);
             // 
             // text_id_cortes
             // 
@@ -1082,6 +1084,7 @@ namespace puntoDeVentaSBD
             this.btn_ins_cortes.TabIndex = 32;
             this.btn_ins_cortes.Text = "Crear";
             this.btn_ins_cortes.UseVisualStyleBackColor = false;
+            this.btn_ins_cortes.Click += new System.EventHandler(this.btn_ins_cortes_Click);
             // 
             // lb_id_cortes
             // 
@@ -1119,6 +1122,7 @@ namespace puntoDeVentaSBD
             this.btn_busc_cortes.TabIndex = 27;
             this.btn_busc_cortes.Text = "Buscar";
             this.btn_busc_cortes.UseVisualStyleBackColor = false;
+            this.btn_busc_cortes.Click += new System.EventHandler(this.btn_busc_cortes_Click);
             // 
             // lbl_fecfin_cortes
             // 
@@ -1168,6 +1172,7 @@ namespace puntoDeVentaSBD
             this.dgv_cortes.ReadOnly = true;
             this.dgv_cortes.Size = new System.Drawing.Size(717, 155);
             this.dgv_cortes.TabIndex = 13;
+            this.dgv_cortes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cortes_CellClick);
             // 
             // lbl_cortes
             // 
