@@ -181,7 +181,7 @@ namespace puntoDeVentaSBD
             if (MessageBox.Show(msg+"¿Desea realizar la eliminacion?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 string sql = "UPDATE punto_de_venta."+tabla+" " +
-                             "SET active=false,deleted_by='"+user+"' WHERE "+param+"="+id+";";
+                             "SET active=false,deleted_by='"+user+"',deleted_date=NOW() WHERE "+param+"="+id+";";
                 comando(sql);
 
             }
