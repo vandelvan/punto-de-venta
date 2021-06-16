@@ -2,6 +2,7 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=C21001C2_002DA15B_002D4E17_002DA4DC_002DDA4CAF21EB44_002Ff_003AMenu_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">C:\Users\Gustavo\.dotnet\sdk\5.0.202\MSBuild.dll</s:String>
 	<s:Int64 x:Key="/Default/Environment/Hierarchy/Build/BuildTool/MsbuildVersion/@EntryValue">4294967293</s:Int64>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=puntoDeVentaSBD_002FAdministracion/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=puntoDeVentaSBD_002FError/@EntryIndexedValue">True</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=puntoDeVentaSBD_002FInicio/@EntryIndexedValue">True</s:Boolean>

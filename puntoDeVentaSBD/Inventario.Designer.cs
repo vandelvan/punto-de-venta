@@ -276,9 +276,9 @@ namespace puntoDeVentaSBD
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_ventas.ForeColor = System.Drawing.Color.Black;
-            this.btn_ventas.Location = new System.Drawing.Point(443, 9);
+            this.btn_ventas.Location = new System.Drawing.Point(434, 9);
             this.btn_ventas.Name = "btn_ventas";
-            this.btn_ventas.Size = new System.Drawing.Size(139, 28);
+            this.btn_ventas.Size = new System.Drawing.Size(158, 28);
             this.btn_ventas.TabIndex = 29;
             this.btn_ventas.Text = "VENTAS";
             this.btn_ventas.UseVisualStyleBackColor = false;
@@ -1069,9 +1069,9 @@ namespace puntoDeVentaSBD
             this.btn_admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_admin.ForeColor = System.Drawing.Color.Black;
-            this.btn_admin.Location = new System.Drawing.Point(443, 42);
+            this.btn_admin.Location = new System.Drawing.Point(434, 42);
             this.btn_admin.Name = "btn_admin";
-            this.btn_admin.Size = new System.Drawing.Size(149, 28);
+            this.btn_admin.Size = new System.Drawing.Size(158, 28);
             this.btn_admin.TabIndex = 29;
             this.btn_admin.Text = "ADMINISTRACION";
             this.btn_admin.UseVisualStyleBackColor = false;
