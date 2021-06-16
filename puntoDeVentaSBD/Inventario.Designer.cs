@@ -149,6 +149,7 @@ namespace puntoDeVentaSBD
             // prodBuscar
             // 
             prodBuscar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            prodBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             prodBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             prodBuscar.Location = new System.Drawing.Point(439, 236);
             prodBuscar.Name = "prodBuscar";
@@ -160,57 +161,73 @@ namespace puntoDeVentaSBD
             // 
             // prodRestaurar
             // 
-            prodRestaurar.Location = new System.Drawing.Point(650, 23);
+            prodRestaurar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            prodRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            prodRestaurar.ForeColor = System.Drawing.Color.LightBlue;
+            prodRestaurar.Location = new System.Drawing.Point(603, 3);
             prodRestaurar.Name = "prodRestaurar";
-            prodRestaurar.Size = new System.Drawing.Size(75, 23);
+            prodRestaurar.Size = new System.Drawing.Size(122, 43);
             prodRestaurar.TabIndex = 28;
             prodRestaurar.Text = "Restaurar";
-            prodRestaurar.UseVisualStyleBackColor = true;
+            prodRestaurar.UseVisualStyleBackColor = false;
             prodRestaurar.Click += new System.EventHandler(this.prodRestaurar_Click);
             // 
             // departamentosRestaurar
             // 
-            departamentosRestaurar.Location = new System.Drawing.Point(650, 16);
+            departamentosRestaurar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            departamentosRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            departamentosRestaurar.ForeColor = System.Drawing.Color.LightBlue;
+            departamentosRestaurar.Location = new System.Drawing.Point(603, 3);
             departamentosRestaurar.Name = "departamentosRestaurar";
-            departamentosRestaurar.Size = new System.Drawing.Size(75, 23);
+            departamentosRestaurar.Size = new System.Drawing.Size(122, 43);
             departamentosRestaurar.TabIndex = 29;
             departamentosRestaurar.Text = "Restaurar";
-            departamentosRestaurar.UseVisualStyleBackColor = true;
+            departamentosRestaurar.UseVisualStyleBackColor = false;
             departamentosRestaurar.Click += new System.EventHandler(this.departamentosRestaurar_Click);
             // 
             // proveedoresRestaurar
             // 
-            proveedoresRestaurar.Location = new System.Drawing.Point(650, 16);
+            proveedoresRestaurar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            proveedoresRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            proveedoresRestaurar.ForeColor = System.Drawing.Color.LightBlue;
+            proveedoresRestaurar.Location = new System.Drawing.Point(603, 3);
             proveedoresRestaurar.Name = "proveedoresRestaurar";
-            proveedoresRestaurar.Size = new System.Drawing.Size(75, 23);
+            proveedoresRestaurar.Size = new System.Drawing.Size(122, 43);
             proveedoresRestaurar.TabIndex = 29;
             proveedoresRestaurar.Text = "Restaurar";
-            proveedoresRestaurar.UseVisualStyleBackColor = true;
+            proveedoresRestaurar.UseVisualStyleBackColor = false;
             proveedoresRestaurar.Click += new System.EventHandler(this.proveedoresRestaurar_Click);
             // 
             // impuestosRestaurar
             // 
-            impuestosRestaurar.Location = new System.Drawing.Point(650, 17);
+            impuestosRestaurar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            impuestosRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            impuestosRestaurar.ForeColor = System.Drawing.Color.LightBlue;
+            impuestosRestaurar.Location = new System.Drawing.Point(603, 3);
             impuestosRestaurar.Name = "impuestosRestaurar";
-            impuestosRestaurar.Size = new System.Drawing.Size(75, 23);
+            impuestosRestaurar.Size = new System.Drawing.Size(122, 40);
             impuestosRestaurar.TabIndex = 29;
             impuestosRestaurar.Text = "Restaurar";
-            impuestosRestaurar.UseVisualStyleBackColor = true;
+            impuestosRestaurar.UseVisualStyleBackColor = false;
             impuestosRestaurar.Click += new System.EventHandler(this.impuestosRestaurar_Click);
             // 
             // descuentosRestaurar
             // 
-            descuentosRestaurar.Location = new System.Drawing.Point(650, 20);
+            descuentosRestaurar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            descuentosRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            descuentosRestaurar.ForeColor = System.Drawing.Color.LightBlue;
+            descuentosRestaurar.Location = new System.Drawing.Point(603, 3);
             descuentosRestaurar.Name = "descuentosRestaurar";
-            descuentosRestaurar.Size = new System.Drawing.Size(75, 23);
+            descuentosRestaurar.Size = new System.Drawing.Size(122, 47);
             descuentosRestaurar.TabIndex = 29;
             descuentosRestaurar.Text = "Restaurar";
-            descuentosRestaurar.UseVisualStyleBackColor = true;
+            descuentosRestaurar.UseVisualStyleBackColor = false;
             descuentosRestaurar.Click += new System.EventHandler(this.descuentosRestaurar_Click);
             // 
             // depBuscar
             // 
             depBuscar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            depBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             depBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             depBuscar.Location = new System.Drawing.Point(352, 219);
             depBuscar.Name = "depBuscar";
@@ -223,6 +240,7 @@ namespace puntoDeVentaSBD
             // button1
             // 
             button1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             button1.Location = new System.Drawing.Point(276, 238);
             button1.Name = "button1";
@@ -235,6 +253,7 @@ namespace puntoDeVentaSBD
             // impBuscar
             // 
             impBuscar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            impBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             impBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             impBuscar.Location = new System.Drawing.Point(352, 241);
             impBuscar.Name = "impBuscar";
@@ -247,6 +266,7 @@ namespace puntoDeVentaSBD
             // descuentosBuscar
             // 
             descuentosBuscar.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (34)))), ((int) (((byte) (34)))), ((int) (((byte) (34)))));
+            descuentosBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             descuentosBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             descuentosBuscar.Location = new System.Drawing.Point(417, 251);
             descuentosBuscar.Name = "descuentosBuscar";
@@ -347,6 +367,7 @@ namespace puntoDeVentaSBD
             // prodEliminar
             // 
             this.prodEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.prodEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prodEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.prodEliminar.Location = new System.Drawing.Point(540, 293);
             this.prodEliminar.Name = "prodEliminar";
@@ -359,6 +380,7 @@ namespace puntoDeVentaSBD
             // Actualizar
             // 
             this.Actualizar.BackColor = System.Drawing.Color.Teal;
+            this.Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Actualizar.ForeColor = System.Drawing.Color.MintCream;
             this.Actualizar.Location = new System.Drawing.Point(540, 236);
             this.Actualizar.Name = "Actualizar";
@@ -388,6 +410,7 @@ namespace puntoDeVentaSBD
             // prodInsertar
             // 
             this.prodInsertar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.prodInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prodInsertar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.prodInsertar.Location = new System.Drawing.Point(439, 293);
             this.prodInsertar.Name = "prodInsertar";
@@ -551,6 +574,7 @@ namespace puntoDeVentaSBD
             // depEliminar
             // 
             this.depEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.depEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.depEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.depEliminar.Location = new System.Drawing.Point(453, 276);
             this.depEliminar.Name = "depEliminar";
@@ -563,6 +587,7 @@ namespace puntoDeVentaSBD
             // depActualizar
             // 
             this.depActualizar.BackColor = System.Drawing.Color.Teal;
+            this.depActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.depActualizar.ForeColor = System.Drawing.Color.MintCream;
             this.depActualizar.Location = new System.Drawing.Point(453, 219);
             this.depActualizar.Name = "depActualizar";
@@ -575,6 +600,7 @@ namespace puntoDeVentaSBD
             // depInsertar
             // 
             this.depInsertar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.depInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.depInsertar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.depInsertar.Location = new System.Drawing.Point(352, 276);
             this.depInsertar.Name = "depInsertar";
@@ -711,6 +737,7 @@ namespace puntoDeVentaSBD
             // proEliminar
             // 
             this.proEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.proEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.proEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.proEliminar.Location = new System.Drawing.Point(377, 295);
             this.proEliminar.Name = "proEliminar";
@@ -723,6 +750,7 @@ namespace puntoDeVentaSBD
             // proActualizar
             // 
             this.proActualizar.BackColor = System.Drawing.Color.Teal;
+            this.proActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.proActualizar.ForeColor = System.Drawing.Color.MintCream;
             this.proActualizar.Location = new System.Drawing.Point(377, 238);
             this.proActualizar.Name = "proActualizar";
@@ -735,6 +763,7 @@ namespace puntoDeVentaSBD
             // proInsertar
             // 
             this.proInsertar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.proInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.proInsertar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.proInsertar.Location = new System.Drawing.Point(276, 295);
             this.proInsertar.Name = "proInsertar";
@@ -836,6 +865,7 @@ namespace puntoDeVentaSBD
             // impEliminar
             // 
             this.impEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.impEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.impEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.impEliminar.Location = new System.Drawing.Point(453, 298);
             this.impEliminar.Name = "impEliminar";
@@ -848,6 +878,7 @@ namespace puntoDeVentaSBD
             // impActualizar
             // 
             this.impActualizar.BackColor = System.Drawing.Color.Teal;
+            this.impActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.impActualizar.ForeColor = System.Drawing.Color.MintCream;
             this.impActualizar.Location = new System.Drawing.Point(453, 241);
             this.impActualizar.Name = "impActualizar";
@@ -860,6 +891,7 @@ namespace puntoDeVentaSBD
             // impInsertar
             // 
             this.impInsertar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.impInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.impInsertar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.impInsertar.Location = new System.Drawing.Point(352, 298);
             this.impInsertar.Name = "impInsertar";
@@ -1005,6 +1037,7 @@ namespace puntoDeVentaSBD
             // desEliminar
             // 
             this.desEliminar.BackColor = System.Drawing.Color.DarkRed;
+            this.desEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.desEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.desEliminar.Location = new System.Drawing.Point(518, 308);
             this.desEliminar.Name = "desEliminar";
@@ -1017,6 +1050,7 @@ namespace puntoDeVentaSBD
             // desActualizar
             // 
             this.desActualizar.BackColor = System.Drawing.Color.Teal;
+            this.desActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.desActualizar.ForeColor = System.Drawing.Color.MintCream;
             this.desActualizar.Location = new System.Drawing.Point(518, 251);
             this.desActualizar.Name = "desActualizar";
@@ -1029,6 +1063,7 @@ namespace puntoDeVentaSBD
             // desInsertar
             // 
             this.desInsertar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.desInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.desInsertar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.desInsertar.Location = new System.Drawing.Point(417, 308);
             this.desInsertar.Name = "desInsertar";
