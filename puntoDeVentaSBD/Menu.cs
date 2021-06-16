@@ -303,17 +303,8 @@ namespace puntoDeVentaSBD
 
             }
         }
-        
-        //Mixta por ahora
-        private void actualizarCortes()
-        {
-            string sql = "SELECT id,fecha_inicio,fecha_fin,entrada_total,salida_total,balance FROM"+" punto_de_venta.corte WHERE active=true;";
-            DataTable aux = consulta(sql);
-            if(aux != null)
-                dgv_cortes.DataSource = aux;
-        }
-        
-        
+
+
         //Funciones de clientes
         
         private void actualizarClientes()
@@ -617,7 +608,106 @@ namespace puntoDeVentaSBD
             if(aux != null)
                 dgv_trans.DataSource = aux;
         }
-
         
+        //Funciones de cortes
+        private void actualizarCortes()
+        {
+            string sql = "SELECT id,fecha_inicio,fecha_fin,entrada_total,salida_total,balance FROM"+" punto_de_venta.corte WHERE active=true;";
+            DataTable aux = consulta(sql);
+            if(aux != null)
+                dgv_cortes.DataSource = aux;
+        }
+
+
+        private void btn_rein_cortes_Click(object sender, EventArgs e)
+        {
+            actualizarCortes();
+        }
+
+        private void dgv_cortes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int n = e.RowIndex;
+            if (n != -1)
+            {
+                text_id_cortes.Text = dgv_cortes.Rows[n].Cells[0].Value.ToString();
+                text_fecin_cortes.Text = dgv_cortes.Rows[n].Cells[1].Value.ToString().Substring(0, 19);
+                text_fecfin_cortes.Text = dgv_cortes.Rows[n].Cells[2].Value.ToString().Substring(0, 19);
+            }
+        }
+
+        private void btn_busc_cortes_Click(object sender, EventArgs e)
+        {
+            string id="", ini="",fin="";
+            if (text_id_cortes.Text != "") 
+            {
+                id = " AND id=" + text_id_cortes.Text;
+            }
+            if (text_fecin_cortes.Text != "")
+            {
+                ini = " AND fecha_inicio::text like '%" + text_fecin_cortes.Text+"%'";
+            }
+            if (text_fecfin_cortes.Text != "")
+            {
+                fin = " AND fecha_fin::text like '%" + text_fecfin_cortes.Text+"%'";
+            }
+            
+            string sql = "SELECT id,fecha_inicio,fecha_fin,entrada_total,salida_total,balance FROM"+
+                         " punto_de_venta.corte WHERE active=true"+id+ini+fin+";";
+
+            DataTable aux = consulta(sql);
+            if(aux != null)
+                dgv_cortes.DataSource = aux;
+        }
+
+        private void btn_ins_cortes_Click(object sender, EventArgs e)
+        {
+            if (text_id_cortes.Text != "")
+            {
+                Error er = new Error();
+                er.info.Text = "¡Los ID son automaticos, borrar el ID!";
+                er.Show();
+                return;
+            }
+            if (text_fecin_cortes.Text != "")
+            {
+                string fin = "NOW()",ini = text_fecin_cortes.Text;
+                if (text_fecfin_cortes.Text != "")
+                    fin = "'"+text_fecfin_cortes.Text+"'";
+                
+                string sql = "SELECT corte_caja('"+ini+"',"+fin+",'"+user+"');";
+                using var con = new NpgsqlConnection(cs);
+                con.Open();
+                using var cmd = new NpgsqlCommand();
+                cmd.Connection = con;
+                using var ds = new NpgsqlCommand();
+                ds.Connection = con;
+                ds.CommandText = "SET DATESTYLE TO SQL,DMY;";
+                ds.ExecuteNonQuery();
+                ds.CommandText = "SET TIMEZONE='posix/Mexico/General';";
+                ds.ExecuteNonQuery();
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                actualizarCortes();
+            }
+            else
+            {
+                Error er = new Error();
+                er.info.Text = "¡Inserta al menos la fecha inicio!";
+                er.Show();
+                
+            }
+        }
+
+
+        private void btn_del_cortes_Click(object sender, EventArgs e)
+        {
+            string id = text_id_cortes.Text;
+            string msg = "(ID: " + id + ")" + string.Format(Environment.NewLine);
+            string tabla = "corte";
+            string param = "id";
+            deleteGeneral(msg,tabla,param,id);
+            actualizarCortes();
+        }
     }
 }
